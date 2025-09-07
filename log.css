@@ -1,0 +1,192 @@
+
+/* ================== Global Reset ================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+/* ================== Page Layout ================== */
+.login_content {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ------------------ Left side: background ------------------ */
+.form-left {
+    width: 50%;
+    height: 100vh;
+    position: relative;
+    background-image: url("https://media.istockphoto.com/id/1416049295/photo/african-woman-working-on-laptop-networking-on-social-media-online-and-browsing-internet-while.jpg?s=1024x1024&w=is&k=20&c=0_EQka7LpQYzmdaPVkqZ13plmEhtqft7l6L9SZEUacY=");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.form-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(63, 62, 62, 0.6);
+    z-index: 1;
+}
+.form-left .overlay-text {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px 30px;
+    max-width: 90%;
+}
+.form-left .overlay-text h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+.form-left .overlay-text p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* ------------------ Right side: login form ------------------ */
+.form-right {
+    width: 50%;
+    background-color: #b9b9b986;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+.form-right h1 {
+    color: rgb(49, 165, 49);
+    font-size: 46px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Inputs */
+input[type='email/phone'],
+input[type='password'] {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px 10px;
+    margin-bottom: 15px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    display: block;
+}
+input[type='email/phone']:focus,
+input[type='password']:focus {
+    border-color: rgb(49, 165, 49);
+}
+.check {
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: left;
+    max-width: 320px;
+}
+
+/* Social Buttons */
+.log {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+    width: 100%;
+    max-width: 360px;
+}
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 0;
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.facebook-btn {
+    background-color: #1877F2;
+    font-family: "Facebook Sans", Helvetica, Arial, sans-serif;
+}
+.facebook-btn:hover {
+    background-color: #145dbf;
+    transform: scale(1.03);
+}
+.instagram-btn {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+    font-family: "Instagram Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.instagram-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.03);
+}
+
+/* Submit Button */
+.sign {
+    padding: 12px;
+    width: 100%;
+    max-width: 320px;
+    border-radius: 25px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+.sign:hover {
+    background-color: rgb(121, 117, 117);
+    transform: scale(1.03);
+}
+
+/* Responsive Design */
+@media (min-width: 500px) {
+    .log {
+        flex-direction: row;
+    }
+    .social-btn {
+        width: auto;
+        flex: 1;
+        min-width: 180px;
+    }
+    .log {
+        gap: 10px;
+        justify-content: center;
+    }
+}
+@media (max-width: 900px) {
+    .login_content {
+        flex-direction: column;
+    }
+    .form-left, .form-right {
+        width: 100%;
+        height: 50vh;
+    }
+}
+@media (max-width: 500px) {
+    .form-left .overlay-text h2 {
+        font-size: 24px;
+    }
+    .form-left .overlay-text p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="Reg.css">
+    <script src="Reg.js" defer></script>
+</head>
+<body>
+    <div class="registration_content">
+        <!-- Left side with background image -->
+        <div class="form-left">
+            <div class="overlay-text">
+                <h2>Welcome!</h2>
+                <p>Create your account to get started</p>
+            </div>
+        </div>
+
+        <!-- Right side: registration form -->
+        <div class="form-right">
+            <h1>Registration Form</h1>
+            <form id="registerForm" action="#" method="post">
+              <input type="text" placeholder="First Name" id="first" required>
+              <input type="text" placeholder="Last Name" id="last" required>
+              <input type="email" placeholder="Email" id="mail" required>
+          
+              <!-- Password with validation rules -->
+              <input type="password" 
+                     placeholder="Password" 
+                     id="password" 
+                     required
+                     pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                     title="Password must be at least 8 characters long, with at least 1 uppercase letter, 1 number, and 1 special character (@$!%*?&).">
+          
+              <!-- Confirm Password -->
+              <input type="password" placeholder="Confirm Password" id="confirm" required>
+              <p id="matchMsg"></p> <!-- 🔹 Error message goes here -->
+
+          
+              <input type="text" placeholder="Password Hint" id="hint">
+          
+              <div class="check">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree with the terms and conditions</label>
+              </div>
+          
+              <button type="submit" class="sign">Sign In</button>
+              <p>Already have an account? <a href="log.html">Log In</a></p>
+            </form>
+          </div>
+          
+    </div>
+</body>
+</html>

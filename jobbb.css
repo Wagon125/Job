@@ -1,0 +1,237 @@
+
+/* ========== Global Reset & Base ========== */
+* {
+    box-sizing: border-box;   /* ✅ makes sure padding/margin stay inside */
+}
+
+html, body {
+    height: 100%;         
+    margin: 0;
+    overflow-x: hidden;   /* ✅ stops horizontal scrolling */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;    
+    background: #fff;
+    font-size: 16px;
+    line-height: 1.6em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: red;
+    background-size: cover; /* scales image to cover entire screen */
+    font-family: Arial, sans-serif;
+  }
+
+/* ========== Navbar ========== */
+.top {
+    width: 100%;
+    background-color: rgb(104, 49, 104);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+}
+
+.knight {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.job { color: green; }
+.stock { color: white; }
+
+.list ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.list li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+/* Hover underline effect */
+.list li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #1f5433; 
+    transition: width 0.3s ease;
+}
+
+.list li a:hover::after {
+    width: 100%;
+}
+
+/* Navbar button */
+.btn {
+    padding: 8px 12px;
+    border: none;
+    background:  rgb(49, 165, 49);
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: rgb(121, 117, 117);
+    transform: scale(1.05);
+}
+
+/* ========== Section: Browse Jobs ========== */
+#blood {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f4f6f9;
+    flex: 1; /* pushes footer down */
+}
+
+/* Heading wrapper */
+.bold {
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 5px;
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}
+
+/* Heading text */
+#blood .bold h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    color: #222;
+}
+
+/* Form wrapper */
+.form {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    width: 100%;
+}
+
+/* Form container */
+.con {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Input fields */
+.con input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.con input:focus {
+    border-color:  rgb(49, 165, 49);
+}
+
+/* Search button inside form */
+.con button {
+    background:  rgb(49, 165, 49);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.con button:hover {
+    background: rgb(121, 117, 117);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .con {
+        flex-direction: column;
+    }
+
+    .con input,
+    .con button {
+        width: 100%;
+    }
+}
+
+/* Dropdown wrapper */
+.custom-select {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  /* Styled select */
+  .custom-select select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+    appearance: none;       /* removes default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+  }
+  
+  /* Custom arrow */
+  .custom-select::after {
+    content: "▼"; /* you can also use an SVG */
+    font-size: 12px;
+    color: #555;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;   /* lets clicks go through */
+  }
+  
+  /* Focus effect */
+  .custom-select select:focus {
+    border-color:  rgb(49, 165, 49);
+  }
+  
+
+/* ========== Footer ========== */
+#main-footer {
+    margin-top: auto; /* ✅ Sticky footer */
+    background-color: rgb(104, 49, 104);
+    text-align: center;
+    padding: 15px;
+    color: rgb(252, 199, 24);
+}
