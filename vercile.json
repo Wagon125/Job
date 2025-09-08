@@ -1,6 +1,8 @@
-{
-    "routes": [
-      { "src": "/", "dest": "/job.html" }
+
+  
+  {
+    "rewrites": [
+      { "source": "/", "destination": "/job.html" }
     ]
   }
   
