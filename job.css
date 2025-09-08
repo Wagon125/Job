@@ -21,10 +21,7 @@ body {
     position: relative;
 }
 
-body {
-    background: lightblue;
-  }
-  
+
 
 /* Dark overlay */
 body::before {
