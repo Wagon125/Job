@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Dashboard</title>
+  <link rel="stylesheet" href="dosh.css">
+  <script src="dosh.js" defer></script>
+</head>
+<body>
+  <div class="dashboard-container">
+    
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      <div class="profile">
+        <img src="https://via.placeholder.com/80" alt="User" class="profile-pic">
+        <h3 id="profileName">John Doe</h3>
+        <p id="profileEmail">john.doe@example.com</p>
+      </div>
+      <div class="tab-settings">
+        <nav>
+          <a href="#" class="tab tab-active">Dashboard</a>
+          <a href="#" class="tab">Jobs</a>
+          <a href="#" class="tab">Messages <span class="badge">2</span></a>
+          <a href="settings.html" class="tab">Settings</a>
+        </nav>
+      </div>
+      
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="welcome">
+        <h1>Welcome back, <span id="username">User</span> ♻️🖤</h1>
+      </div>
+
+      <!-- Stats with dropdowns -->
+      <div class="stats">
+        <div class="card blue dropdown" onclick="toggleDropdown('applicationsDropdown', this)">
+          <h2>34</h2>
+          <p>Applications</p>
+          <span class="arrow">▼</span>
+          <div id="applicationsDropdown" class="dropdown-content">
+            <ul>
+              <li>Frontend Developer – Applied on Sept 3</li>
+              <li>UI/UX Designer – Applied on Aug 28</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card purple dropdown" onclick="toggleDropdown('interviewsDropdown', this)">
+          <h2>5</h2>
+          <p>Interviews</p>
+          <span class="arrow">▼</span>
+          <div id="interviewsDropdown" class="dropdown-content">
+            <ul>
+              <li>Marketing Manager – Sept 12, 2025</li>
+              <li>Backend Engineer – Sept 18, 2025</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card orange dropdown" onclick="toggleDropdown('savedJobsDropdown', this)">
+          <h2>12</h2>
+          <p>Jobs Saved</p>
+          <span class="arrow">▼</span>
+          <div id="savedJobsDropdown" class="dropdown-content">
+            <ul>
+              <li>Data Analyst – Finance Corp</li>
+              <li>Product Designer – Creative Agency</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Job Listings -->
+      <section class="jobs">
+        <h2>Recent Jobs</h2>
+        <div class="job">
+          <div>
+            <h3>Frontend Developer</h3>
+            <p>Tech Solutions • Remote</p>
+          </div>
+          <button onclick="applyJob('Frontend Developer')">Apply</button>
+        </div>
+        <div class="job">
+          <div>
+            <h3>Data Analyst</h3>
+            <p>Finance Corp • Chicago, IL</p>
+          </div>
+          <button onclick="applyJob('Data Analyst')">Apply</button>
+        </div>
+        <div class="job">
+          <div>
+            <h3>Virtual Assistant</h3>
+            <p>Unicorn Ent • Lagos, Nigeria</p>
+          </div>
+          <button onclick="applyJob('Virtual Assistant')">Apply</button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Right Sidebar -->
+    <aside class="right-bar">
+      <div class="progress">
+        <h4>Profile Completion</h4>
+        <div class="circle" id="progressCircle">0%</div>
+      </div>
+    </aside>
+    
+  </div>
+</body>
+</html>

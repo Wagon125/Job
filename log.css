@@ -77,7 +77,7 @@ body, html {
 }
 
 /* Inputs */
-input[type='email/phone'],
+input[type='text'],
 input[type='password'] {
     width: 100%;
     max-width: 320px;
@@ -88,7 +88,7 @@ input[type='password'] {
     outline: none;
     display: block;
 }
-input[type='email/phone']:focus,
+input[type='text']:focus,
 input[type='password']:focus {
     border-color: rgb(49, 165, 49);
 }
@@ -98,6 +98,22 @@ input[type='password']:focus {
     text-align: left;
     max-width: 320px;
 }
+
+.error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+input.error-border {
+    border: 2px solid red;
+}
+  
+input.success-border {
+    border: 2px solid green;
+  }
+  
 
 /* Social Buttons */
 .log {
@@ -140,7 +156,7 @@ input[type='password']:focus {
 }
 
 /* Submit Button */
-.sign {
+#sign {
     padding: 12px;
     width: 100%;
     max-width: 320px;
@@ -153,7 +169,7 @@ input[type='password']:focus {
     transition: all 0.3s ease;
     margin-top: 10px;
 }
-.sign:hover {
+#sign:hover {
     background-color: rgb(121, 117, 117);
     transform: scale(1.03);
 }

@@ -76,7 +76,7 @@ body, html {
 
 /* Heading */
 .form-right h1 {
-    color: rgb(49, 165, 49);
+    color: linear-gradient(180deg, #14833b 0%, #0a2517 100%);
     font-size: 46px;
     text-align: center;
     margin-bottom: 30px;
