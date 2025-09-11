@@ -206,3 +206,13 @@ input.success-border {
         font-size: 14px;
     }
 }
+
+.forget{
+    text-decoration: none;
+    text-align: right;
+}
+
+.forget:hover{
+    
+    transform: scaleX(3.0);
+}
