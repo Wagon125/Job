@@ -1,5 +1,8 @@
+
 document.addEventListener("DOMContentLoaded", () => {
+    // -------------------------
     // Set username and email
+    // -------------------------
     const usernameSpan = document.getElementById("username");
     const profileName = document.getElementById("profileName");
     const profileEmail = document.getElementById("profileEmail");
@@ -13,7 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
         profileEmail.textContent = savedUser.email;
     }
 
+    // -------------------------
     // Progress Circle Animation
+    // -------------------------
     const circle = document.getElementById("progressCircle");
     let percent = 0;
     const interval = setInterval(() => {
@@ -21,27 +26,44 @@ document.addEventListener("DOMContentLoaded", () => {
         else circle.textContent = ++percent + "%";
     }, 30);
 
-    // Dark Mode
-    const darkMode = localStorage.getItem("darkMode") === "true";
-    if (darkMode) document.body.classList.add("dark");
-
-    // Tabs: Active on Click but allow Settings link to work
-    const tabs = document.querySelectorAll('.tab-settings .tab');
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function(e) {
-            // Only prevent default if it's NOT the settings link
-            if (!this.href.includes("settings.html")) e.preventDefault();
-
-            // Remove active from all tabs
-            tabs.forEach(t => t.classList.remove('tab-active'));
-
-            // Add active to clicked tab
-            this.classList.add('tab-active');
+    // -------------------------
+    // Tabs: Active on Click
+    // -------------------------
+    const tabSets = document.querySelectorAll('.tab-settings, .tab-jobs, .logout');
+    tabSets.forEach(set => {
+        const tabs = set.querySelectorAll('.tab');
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                // Allow Settings link to work
+                if (!this.href.includes("settings.html") && !this.href.includes("jobs.html") && !this.href.includes("main.html")) {
+                    e.preventDefault();
+                }
+                tabs.forEach(t => t.classList.remove('tab-active'));
+                this.classList.add('tab-active');
+            });
         });
     });
+
+    // -------------------------
+    // Dark Mode: Apply on load
+    // -------------------------
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark");
+    }
+
+    // Optional: If you have a toggle button on dashboard
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        });
+    }
 });
 
+// -------------------------
 // Accordion Dropdown Function
+// -------------------------
 function toggleDropdown(id, cardElement) {
     const dropdown = document.getElementById(id);
     const arrow = cardElement.querySelector(".arrow");
@@ -62,7 +84,9 @@ function toggleDropdown(id, cardElement) {
     }
 }
 
+// -------------------------
 // Dummy apply job
+// -------------------------
 function applyJob(jobTitle) {
     alert(`You applied for ${jobTitle}`);
 }

@@ -14,7 +14,20 @@
     align-items: center;
     min-height: 100vh;
     background: #f7fffc;
-  }
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30p;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      
+     /* animation */
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease-out forwards;
+      }
+      
   
   .forgot-main {
     width: 100%;
@@ -156,4 +169,16 @@
   body.dark input::placeholder {
     color: #ccc;
   }
+
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
   

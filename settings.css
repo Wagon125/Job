@@ -346,7 +346,7 @@ body.dark .moon-icon {
   .dark-mode-toggle {
     margin-left: auto;
   }
-}
+} 
 
 /* Dark Mode Text Fix */
 body.dark label,
@@ -390,5 +390,3 @@ body.dark .dark-mode-toggle label {
   from { transform: rotate(360deg); }
   to { transform: rotate(0deg); }
 }
-
-

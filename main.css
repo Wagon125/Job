@@ -1,0 +1,415 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    font-size: 16px;
+    line-height: 1.6em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c") no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+}
+
+
+
+/* Dark overlay */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 0;
+}
+
+/* Ensure all content stays above overlay */
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================= Navbar ================= */
+.top {
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.knight {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h1 {
+    color: #fff;
+}
+
+.job { 
+    color: green; 
+    font-weight: 600;
+    font-stretch: ultra-expanded;
+}
+
+.stock { 
+    color: white; 
+}
+
+/* Navigation menu */
+.list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.list ul.block {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+/* Menu links */
+.list li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+/* Hover underline effect */
+.list li a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -3px;
+    background-color: #1f5433;
+    transition: width 0.3s ease;
+}
+
+.list li a:hover::after {
+    width: 100%;
+}
+
+/* ================= Dropdown Menu ================= */
+li.dropdown {
+    position: relative;
+}
+
+li.dropdown > a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+    padding-right: 12px;
+}
+
+/* Small arrow for dropdown */
+li.dropdown > a::after {
+    content: "▼";
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+/* Dropdown box */
+.dropdown-content {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 10px 15px;
+    border-radius: 6px;
+    min-width: 220px;
+    z-index: 1000;
+    list-style: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Small arrow above dropdown */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent rgba(0,0,0,0.85) transparent;
+}
+
+/* Dropdown items */
+.dropdown-content li {
+    color: #fff;
+    padding: 6px 0;
+    font-size: 14px;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-content li:hover {
+    color: #1f5433;
+}
+
+/* Show dropdown on hover for desktop */
+@media (min-width: 769px) {
+    li.dropdown:hover .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ================= Navbar Button ================= */
+.list > .btn {
+    height: 40px;
+    padding: 0 20px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    border: none;
+    background: rgb(49, 165, 49);
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.list > .btn:hover {
+    background-color: rgb(121, 117, 117);
+    transform: scale(1.05);
+}
+
+/* ================= Section: Browse Jobs ================= */
+#blood {
+    padding: 40px 20px;
+    text-align: center;
+    background: transparent;
+    flex: 1;
+}
+
+.bold {
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 5px;
+    font-size: 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}
+
+#blood .bold h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+    color: whitesmoke;
+}
+
+/* ================= Form ================= */
+.form {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.con {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.17);  /* white but partly transparent */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* light transparent border */
+    backdrop-filter: blur(5px); /* glass blur */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 10px; /* smooth corners */
+    padding: 15px;
+}
+
+.con input {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    transition: border 0.3s ease;
+}
+
+.con input:focus {
+    border-color: rgb(49, 165, 49);
+}
+
+.con button {
+    background: rgb(49, 165, 49);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.con button:hover {
+    background: rgb(121, 117, 117);
+}
+
+/* Custom select */
+.custom-select {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.custom-select select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+    appearance: none;
+    cursor: pointer;
+}
+
+.custom-select::after {
+    content: "▼";
+    font-size: 12px;
+    color: #555;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.custom-select select:focus {
+    border-color: rgb(49, 165, 49);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .list {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .list ul.block {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .list > .btn {
+        width: 100%;
+    }
+
+    /* Mobile dropdown adjustments */
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: none;
+        display: none;      /* JS toggles */
+        width: 100%;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        background-color: rgba(0,0,0,0.85);
+        border-radius: 6px;
+        z-index: 1000;
+        margin-top: 5px;
+    }
+
+    .dropdown-content li {
+        padding: 10px;
+    }
+}
+
+/* ================= Footer ================= */
+#main-footer {
+    margin-top: auto;
+    background-color: transparent-grey;
+    text-align: center;
+    padding: 15px;
+    color: rgb(252, 199, 24);
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+    .top {
+        flex-direction: row;          /* keep logo on left, nav on right */
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;           /* a little tighter on mobile */
+    }
+
+    .list {
+        flex-direction: row;          /* stay horizontal */
+        width: auto;
+        gap: 15px;
+    }
+
+    .list ul.block {
+        flex-direction: row;          /* keep links side by side */
+        gap: 15px;
+    }
+
+    .list > .btn {
+        width: auto;                  /* prevent button from stretching full width */
+    }
+
+    /* Mobile dropdown adjustments */
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        display: none; /* JS toggles */
+        min-width: 220px;
+        background-color: rgba(0,0,0,0.85);
+        border-radius: 6px;
+        z-index: 1000;
+        margin-top: 5px;
+    }
+
+    .dropdown-content li {
+        padding: 10px;
+    }
+}
+
