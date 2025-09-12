@@ -1,17 +1,17 @@
 
-// ---------------- Dark Mode Handling ----------------
+// Ensure code runs only after DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+    // Apply dark mode immediately if previously toggled
+    if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark");
+    }
 
-// Immediately apply dark mode on page load if toggled previously
-const isDarkMode = localStorage.getItem("darkMode") === "true";
-if (isDarkMode) {
-    document.body.classList.add("dark");
-}
-
-// Optional: Toggle dark mode if a button exists
-const darkModeToggle = document.getElementById("dark-mode-toggle");
-if (darkModeToggle) {
-    darkModeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        localStorage.setItem("darkMode", document.body.classList.contains("dark"));
-    });
-}
+    // Optional: If a toggle button exists on dashboard
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark");
+            localStorage.setItem("darkMode", document.body.classList.contains("dark"));
+        });
+    }
+});

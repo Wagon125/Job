@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const tabs = set.querySelectorAll('.tab');
         tabs.forEach(tab => {
             tab.addEventListener('click', function(e) {
+                // Allow navigation for links
                 if (!this.href.includes("settings.html") && !this.href.includes("jobs.html") && !this.href.includes("main.html")) {
                     e.preventDefault();
                 }
@@ -44,15 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // -------------------------
-    // Dark Mode: Ensure applied
+    // Dark Mode: Apply on load
     // -------------------------
-    // This ensures the dashboard instantly respects dark mode on page load
+    const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+    // Apply dark mode immediately if previously toggled
     if (localStorage.getItem("darkMode") === "true") {
         document.body.classList.add("dark");
     }
 
-    // Optional: If you have a toggle button on dashboard
-    const darkModeToggle = document.getElementById("dark-mode-toggle");
+    // Toggle dark mode if button exists
     if (darkModeToggle) {
         darkModeToggle.addEventListener("click", () => {
             document.body.classList.toggle("dark");
@@ -68,6 +70,7 @@ function toggleDropdown(id, cardElement) {
     const dropdown = document.getElementById(id);
     const arrow = cardElement.querySelector(".arrow");
 
+    // Close other dropdowns
     document.querySelectorAll(".dropdown-content").forEach(d => {
         if (d !== dropdown) d.style.maxHeight = null;
     });
@@ -75,6 +78,7 @@ function toggleDropdown(id, cardElement) {
         if (a !== arrow) a.classList.remove("open");
     });
 
+    // Toggle this dropdown
     if (dropdown.style.maxHeight && dropdown.style.maxHeight !== "0px") {
         dropdown.style.maxHeight = null;
         arrow.classList.remove("open");
