@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const tabs = set.querySelectorAll('.tab');
         tabs.forEach(tab => {
             tab.addEventListener('click', function(e) {
-                // Allow Settings link to work
                 if (!this.href.includes("settings.html") && !this.href.includes("jobs.html") && !this.href.includes("main.html")) {
                     e.preventDefault();
                 }
@@ -45,8 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // -------------------------
-    // Dark Mode: Apply on load
+    // Dark Mode: Ensure applied
     // -------------------------
+    // This ensures the dashboard instantly respects dark mode on page load
     if (localStorage.getItem("darkMode") === "true") {
         document.body.classList.add("dark");
     }
