@@ -1,0 +1,184 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+    
+  }
+  
+  /* Layout */
+  .forgot-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f7fffc;
+    max-width: 400px;
+    margin: 60px auto;
+    padding: 30p;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      
+     /* animation */
+    opacity: 0;
+    animation: fadeSlideUp 0.8s ease-out forwards;
+      }
+      
+  
+  .forgot-main {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+  }
+  
+  /* Form Card */
+  .form-card {
+    background: #fafafa;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .form-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  }
+  
+  /* Heading */
+  .form-card h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .info-text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Form Group */
+  .form-group {
+    position: relative;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #218838;
+    box-shadow: 0 0 6px rgba(33,136,56,0.3);
+  }
+
+  /* Form Card */
+.form-card {
+    background: #fafafa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+  }
+  
+  /* Horizontal hover effect like settings form */
+  .form-card:hover {
+    transform: translateX(7px);
+    box-shadow: 0 4px 12px #218838;
+  }
+  
+  
+  .form-group .icon {
+    position: absolute;
+    top: 38px;
+    right: 12px;
+    color: #888;
+    pointer-events: none;
+  }
+  
+  /* Button */
+  .save-btn {
+    background: #28a745;
+    color: #fff;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .save-btn:hover {
+    background: #218838;
+  }
+  
+  /* Login link */
+  .login-link {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .login-link a {
+    color: #218838;
+    text-decoration: none;
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dark Mode support if needed */
+  body.dark .forgot-container {
+    background: #121212;
+  }
+  
+  body.dark .form-card {
+    background: #242424;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    color: #fff;
+  }
+  
+  body.dark input {
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+  }
+  
+  body.dark input::placeholder {
+    color: #ccc;
+  }
+
+  @keyframes fadeSlideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  

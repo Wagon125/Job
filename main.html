@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job-Time</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header id="main-header">
+        <nav id="navbar">
+            <div class="top">
+                <!-- Logo -->
+                <div class="knight">
+                    <p class="left">
+                        <span class="job">Job</span> <span class="stock">Stock</span>
+                    </p>
+                </div>
+
+                <!-- Navigation Menu -->
+                <div class="list">
+                    <ul class="block">
+                        <li><a href="#">ABOUT</a></li>
+
+                        <!-- Contact Dropdown -->
+                        <li class="dropdown">
+                            <a>CONTACT</a>
+                            <ul class="dropdown-content">
+                                <li>Phone: +234-8023792400</li>
+                                <li>Email: jobstock@gmail.com</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <button class="btn" onclick="window.location.href='reg.html'">SIGN UP</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="blood">
+            <div class="bold">
+                <h1>7,000+ Browse Jobs</h1>
+            </div>
+
+            <!-- Search Form -->
+            <div class="form">
+                <form class="con" onsubmit="return false;">
+                    <input type="text" placeholder="Skills, Designation, Companies">
+                    <input type="text" placeholder="Search by location">
+                    
+                    <div class="custom-select">
+                        <select>
+                            <option value="">Choose City</option>
+                            <option value="lagos">Lagos</option>
+                            <option value="abuja">Abuja</option>
+                            <option value="portharcourt">Port Harcourt</option>
+                            <option value="enugu">Enugu</option>
+                            <option value="kano">Kano</option>
+                        </select>
+                    </div>
+
+                    <!-- Fixed: class typo + button type -->
+                    <button type="button" class="but" onclick="window.location.href='guest.html'">Search</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer">
+        <p>© 2025 Job Stock. All rights reserved.</p>
+    </footer>
+</body>
+</html>

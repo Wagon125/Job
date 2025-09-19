@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs Page</title>
+  <link rel="stylesheet" href="jobs.css">
+</head>
+<body class="ligh-mode">
+  <div class="dashboard-container">
+    
+    <!-- Sidebar (same as dashboard) -->
+    <aside class="sidebar">
+      <div class="logo">MyDashboard</div>
+      <ul class="nav-links">
+        <li><a href="dosh.html">Dashboard</a></li>
+        <li class="active"><a href="#">Jobs</a></li>
+        <li><a href="#">Messages</a></li>
+        <li><a href="settings.html">Settings</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="jobs-main">
+      <header class="jobs-header">
+        <h1>Jobs</h1>
+        <input type="text" placeholder="Search for jobs..." id="jobSearch">
+      </header>
+
+      <section class="job-filters">
+        <button class="filter-btn">All</button>
+        <button class="filter-btn">Tech</button>
+        <button class="filter-btn">Design</button>
+        <button class="filter-btn">Marketing</button>
+        <button class="filter-btn">Health Care</button>
+        <button class="filter-btn">Business</button>
+        <button class="filter-btn">Education</button>
+      </section>
+
+      <section class="jobs-list" id="jobsList">
+        <!-- Job cards will be injected here via JS -->
+      </section>
+    </main>
+
+  </div>
+
+  <script src="jobs.js"></script>
+</body>
+</html>

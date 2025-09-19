@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Dashboard</title>
+  <link rel="stylesheet" href="dosh.css">
+  <script src="preload-dark.js"></script>
+  <script src="dark-mode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
+  <script src="dosh.js" defer></script>
+</head>
+<body>
+<div class="dashboard-container">
+
+  <!-- Left Sidebar -->
+  <aside class="sidebar">
+    <div class="profile">
+      <!-- Added id="sidebarProfile" for JS to pick up -->
+      <img id="sidebarProfile" src="https://via.placeholder.com/80" alt="User" class="profile-pic">
+      <h3 id="profileName">John Doe</h3>
+      <p id="profileEmail">john.doe@example.com</p>
+    </div>
+    <nav class="tab-settings">
+      <a href="jobs.html" class="tab">Jobs</a>
+      <a href="#" class="tab">Messages <span class="badge"></span></a>
+      <a href="settings.html" class="tab">Settings</a>
+      <a href="main.html" class="tab">Log Out</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="welcome">
+      <h1>Welcome back, <span id="username">User</span> ♻️🖤</h1>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="stats">
+      <div class="card blue dropdown" onclick="toggleDropdown('applicationsDropdown', this)">
+        <h2>0</h2>
+        <p>Applications</p>
+        <span class="arrow">▼</span>
+        <div id="applicationsDropdown" class="dropdown-content"></div>
+      </div>
+
+      <div class="card purple dropdown" onclick="toggleDropdown('interviewsDropdown', this)">
+        <h2>0</h2>
+        <p>Interviews</p>
+        <span class="arrow">▼</span>
+        <div id="interviewsDropdown" class="dropdown-content"></div>
+      </div>
+
+      <div class="card orange dropdown" onclick="toggleDropdown('savedJobsDropdown', this)">
+        <h2>0</h2>
+        <p>Jobs Saved</p>
+        <span class="arrow">▼</span>
+        <div id="savedJobsDropdown" class="dropdown-content"></div>
+      </div>
+    </div>
+
+    <!-- Job Listings -->
+    <section class="jobs">
+      <h2>Recent Jobs</h2>
+      <div id="recentJobsList"></div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

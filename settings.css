@@ -1,0 +1,392 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Layout */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+/* Sidebar */
+.settings-sidebar {
+  width: 220px;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #14833b 0%, #0a2517 100%);
+}
+
+.settings-sidebar h2 {
+  margin-bottom: 25px;
+  color: #fff;
+  font-size: 18px;
+}
+
+/* Scrollable Tabs */
+.settings-tabs {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding-right: 6px;
+}
+
+.settings-tabs::-webkit-scrollbar {
+  width: 6px;
+}
+
+.settings-tabs::-webkit-scrollbar-thumb {
+  background: #858585;
+  border-radius: 4px;
+}
+
+/* Tab Buttons */
+.settings-tabs .tab {
+  padding: 12px 15px;
+  text-align: left;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.settings-tabs .tab:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(7px);
+  box-shadow: 0 4px 12px  #218838;
+  transition: 0.4s;
+}
+
+.settings-tabs .tab.active {
+  background: #218838;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Main Content */
+.settings-main {
+  flex: 1;
+  padding: 30px;
+  overflow-y: auto;
+  background: #f5f7fa;
+}
+
+/* Header Flex Layout */
+.settings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.dark-mode-toggle input[type="checkbox"] {
+  display: none;
+}
+
+.dark-mode-toggle label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  transition: background 0.3s;
+}
+
+.dark-mode-toggle label:hover {
+  background: #e0e0e0;
+}
+
+.moon-icon {
+  font-size: 20px;
+  color: #555;
+  transition: color 0.3s, transform 0.3s;
+}
+
+/* Scrollable Form Container */
+.form-scroll {
+  max-height: 80vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: slideIn 0.5s ease forwards;
+}
+
+.form-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-scroll::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+/* Form Cards */
+.form-card {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.form-card:hover {
+  transform: translateX(7px);
+  box-shadow: 0 4px 12px #218838;
+}
+
+/* Profile Picture Card */
+.profile-card {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.profile-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.upload-btn, .delete-btn, .save-btn {
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s;
+}
+
+.upload-btn {
+  background: #058612;
+  color: #fff;
+}
+
+.upload-btn:hover {
+  background: #8f8d8d;
+}
+
+.delete-btn {
+  background: #058612;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #8f8d8d;
+}
+
+.save-btn {
+  background: #28a745;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+/* Form Layout */
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Radio Buttons */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Slide animation */
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ---------------- Dark Mode ---------------- */
+html.dark {
+  background: #121212;
+  color: #fff;
+}
+
+html.dark .settings-main {
+  background: #181818;
+}
+
+html.dark .form-card {
+  background: #242424;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+html.dark input,
+html.dark select {
+  background: #2a2a2a;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+/* Sidebar dark mode remains colored, original colors kept */
+
+
+/* Dark Mode Sidebar - Settings Page */
+html.dark .settings-sidebar {
+  background: linear-gradient(180deg, #0a2517 0%, #000 100%);
+  border-right: 1px solid #333;
+}
+
+
+html.dark .settings-tabs .tab {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+
+html.dark .settings-tabs .tab.active {
+  background: #218838;
+  color: #fff;
+}
+
+html.dark .settings-tabs .radio{
+  color: white;
+}
+
+html.dark .settings-tabs .tab:hover {
+  background: rgba(255,255,255,0.2);
+  color: white;
+}
+
+html.dark .moon-icon {
+  color: #fff;
+}
+
+/* ---------------- Mobile Responsive ---------------- */
+@media screen and (max-width: 900px) {
+  .dashboard-container {
+    flex-direction: column;
+  }
+  
+  .settings-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  
+  .settings-tabs {
+    flex-direction: row;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 0;
+  }
+
+  .settings-main {
+    padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .dark-mode-toggle {
+    margin-left: auto;
+  }
+} 
+
+/* Dark Mode Text Fix */
+body.dark label,
+body.dark .radio-group label {
+  color: #fff; /* make all labels and radio texts white */
+}
+
+/* Placeholder Text in Inputs and Textareas */
+body.dark input::placeholder,
+body.dark select::placeholder,
+body.dark textarea::placeholder {
+  color: #ccc; /* lighter placeholder for contrast */
+  opacity: 1;  /* ensure it shows properly */
+}
+
+/* Dark Mode Moon Icon Background */
+html.dark .dark-mode-toggle label {
+  background: #2a2a2a; /* dark background for the toggle circle */
+  color: #fff;          /* optional: ensure moon icon is visible */
+}
+
+/* Moon Icon Animation */
+.moon-icon {
+  transition: transform 0.6s ease;
+}
+
+.moon-spin-on {
+  animation: spin-on 0.6s forwards;
+}
+
+.moon-spin-off {
+  animation: spin-off 0.6s forwards;
+}
+
+@keyframes spin-on {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-off {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}

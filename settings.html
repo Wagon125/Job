@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Settings</title>
+  <script src="preload-dark.js"></script>
+ <script src="dark-mode.js"></script>
+  <link rel="stylesheet" href="settings.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- JS -->
+  <script src="profile.js" defer></script>
+  <script src="settings.js" defer></script>
+</head>
+<body>
+<div class="dashboard-container">
+
+  <!-- Sidebar Tabs -->
+  <aside class="settings-sidebar">
+    <h2>Settings</h2>
+    <div class="settings-tabs">
+      <button class="tab active">
+        <i class="fa-solid fa-user"></i>
+        <span>Profile</span>
+      </button>
+      <button class="tab">
+        <i class="fa-solid fa-lock"></i>
+        <span>Password</span>
+      </button>
+      <button class="tab">
+        <i class="fa-solid fa-bell"></i>
+        <span>Notifications</span>
+      </button>
+      <button class="tab">
+        <i class="fa-solid fa-id-badge"></i>
+        <span>Verification</span>
+      </button>
+      <button class="tab">
+        <i class="fa-solid fa-house"></i>
+        <span>Dashboard</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="settings-main">
+    <div class="settings-header">
+      <h1>Account Settings</h1>
+      <div class="dark-mode-toggle">
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle">
+          <span class="moon-icon">🌙</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-scroll">
+      <!-- Profile Picture Section -->
+      <div class="form-card profile-card">
+        <div class="profile-pic-container">
+          <img id="profilePreview" src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
+          <div class="profile-buttons">
+            <input type="file" id="uploadProfile" accept="image/*" style="display:none;">
+            <button type="button" class="upload-btn" id="uploadBtn">Upload New</button>
+            <button type="button" class="delete-btn" id="deleteBtn">Delete Avatar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Name & Email -->
+      <div class="form-card">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" placeholder="Last Name">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="example@mail.com">
+          </div>
+          <div class="form-group">
+            <label>Mobile Number *</label>
+            <input type="tel" placeholder="+234 801 234 5678">
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Info -->
+      <div class="form-card">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+              <label><input type="radio" name="gender"> Male</label>
+              <label><input type="radio" name="gender"> Female</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>ID (NIN)</label>
+            <input type="text" placeholder="1234 5678 9012">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Tax ID</label>
+            <input type="text" placeholder="1234 5678 9012">
+          </div>
+          <div class="form-group">
+            <label>Country</label>
+            <select>
+              <option>Nigeria</option>
+              <option>Ghana</option>
+              <option>Kenya</option>
+              <option>Morocco</option>
+              <option>Malawi</option>
+              <option>Liberia</option>
+              <option>Sudan</option>
+              <option>Togo</option>
+              <option>Uganda</option>
+              <option>Egypt</option>
+              <option>Zimbabwe</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Save Button -->
+      <div class="form-card">
+        <button class="save-btn">Save Changes</button>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

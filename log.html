@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Login Form</title>
+  <link rel="stylesheet" href="log.css">
+  <script src="log.js" defer></script>
+</head>
+<body>
+  <div class="login_content">
+    <div class="form-left">
+      <div class="overlay-text">
+        <h2>Welcome!</h2>
+        <p>Login to your account to continue</p>
+      </div>
+    </div>
+
+    <div class="form-right">
+      <h1>Login</h1>
+
+      <form id="loginForm">
+        <div class="input-group">
+          <input type="text" id="loginEmail" placeholder="Email" required>
+          <span class="error" id="mailError"></span>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="loginPassword" placeholder="Password" required>
+          <span class="error" id="passwordError"></span>
+        </div>
+        <button type="submit" id="sign">Connect your account</button>
+        <br><br>
+        <p class="or">or login with</p>
+
+        <div class="log">
+          <a href="https://www.facebook.com" class="social-btn facebook-btn">facebook</a>
+          <a href="https://www.instagram.com" class="social-btn instagram-btn">Instagram</a>
+        </div>
+        <br>
+        <a href="forgot.html" class="forget">forgot password?</a>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
